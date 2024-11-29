@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+
+    <h2>Saldo Disponível</h2>
+    <ul>
+        {% for balance in balances %}
+        <li>{{ balance.asset }}: Livre: {{ balance.free }}, Travado: {{ balance.locked }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Sinais Recentes</h2>
+    <ul>
+        {% for signal in signals %}
+        <li>{{ signal.symbol }} - {{ signal.signal }} @ {{ signal.price }} ({{ signal.timestamp }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
